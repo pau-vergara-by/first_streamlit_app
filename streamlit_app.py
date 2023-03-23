@@ -42,10 +42,7 @@ try:
       streamlit.dataframe(back_from_function)
 except URLError as e:
   streamlit.error()
-
-#don't run anything past here while we troubleshoot
-streamlit.stop()
-
+  
 streamlit.header("The fruit load list contains:")
 
 #Snowflake-related functions
@@ -69,4 +66,9 @@ streamlit.write('Thanks for adding', add_my_fruit)
 #this will not work correctly, but just go with it for now
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
+
+
+
+#don't run anything past here while we troubleshoot
+streamlit.stop()
 
